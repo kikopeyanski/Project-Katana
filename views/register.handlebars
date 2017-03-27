@@ -1,0 +1,50 @@
+<div class="login-register-page-wrapper">
+  <div class="information-wrapper">
+
+
+  </div>
+  <div class="login-register">
+    <div class="background-blur-element"></div>
+    <div class="register-form-wrapper">
+      <div class="register-user-image">
+        <img id="user-image" src="images/students.png" alt="">
+      </div>
+      <form role="form" id="user-create-user">
+        <div class="form-group username-input">
+          <label for="username">Username</label>
+          <input type="text" name="username" id="username" tabindex="1" class="form-control"
+                 placeholder="" value="">
+        </div>
+        <div class="form-group email-input">
+          <label for="email">E-mail</label>
+          <input type="email" name="email" id="email" tabindex="1" class="form-control"
+                 placeholder=" " value="">
+        </div>
+        <div class="form-group password-input">
+          <label for="password">Password</label>
+          <input type="password" name="password" id="password" tabindex="2" class="form-control"
+                 placeholder="">
+          <div class="form-control-feedback">Password should be between 4 and 25 characters</div>
+        </div>
+        <div class="form-group confirm-password-input">
+          <label for="confirm-password">Confirm Password</label>
+          <input type="password" name="confirmedPassword" id="confirm-password" tabindex="2" class="form-control"
+                 placeholder=" ">
+          <div class="form-control-feedback">Passwords does not match</div>
+        </div>
+        <div class="form-group">
+          <label for="image">Image</label>
+          <input type="file" name="image" id="image" onchange="">
+        </div>
+        <div class="form-group">
+          <button class="btn btn-success main-action-button" id="user-create-user-btn">Register</button>
+        </div>
+      </form>
+      <div class="login-msg-footer">
+        <hr>
+        <span>Already have an account?</span>
+        <a href="#/login" class="selected">Login</a>
+      </div>
+    </div>
+  </div>
+</div>

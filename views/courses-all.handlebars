@@ -1,0 +1,65 @@
+<div class="content-courses-all-wrapper">
+  <div class="content-courses">
+    <div class="course-module courses-first-module">
+      <h2>First Module</h2>
+      <hr>
+      {{#each this.firstModule}}
+        {{#if isActive}}
+        <div class="course course-active">
+          <div class="course-active-notification">
+            <span>This course is active at the moment</span>
+          </div>
+        {{else}}
+        <div class="course">
+        {{/if}}
+        <div class="course-info">
+          <a href="#/course/{{_id}}">{{name}}<br/></a>
+          <span>{{track}}</span>
+          <!--<div class="course-color-circle" style="background-color: {{color}}; width: 13px;height: 13px"></div>-->
+        </div>
+      </div>
+      {{/each}}
+    </div>
+      <div class="course-module courses-second-module">
+        <h2>Second Module</h2>
+        <hr>
+        {{#each this.secondModule}}
+          {{#if isActive}}
+          <div class="course course-active">
+            <div class="course-active-notification">
+              <span>This course is active at the moment</span>
+            </div>
+          {{else}}
+          <div class="course">
+          {{/if}}
+          <div class="course-info">
+            <a href="#/course/{{_id}}">{{name}}<br/></a>
+            <span>{{track}}</span>
+            <!--<div class="course-color-circle" style="background-color: {{color}}; width: 13px;height: 13px"></div>-->
+          </div>
+        </div>
+        {{/each}}
+      </div>
+        <div class="course-module courses-third-module">
+          <h2>Third Module</h2>
+          <hr>
+          {{#each this.thirdModule}}
+            {{#if isActive}}
+            <div class="course course-active">
+              <div class="course-active-notification">
+                <span>This course is active at the moment</span>
+              </div>
+            {{else}}
+            <div class="course">
+            {{/if}}
+
+            <div class="course-info">
+              <a href="#/course/{{_id}}">{{name}}<br/></a>
+              <span>{{track}}</span>
+              <!--<div class="course-color-circle" style="background-color: {{color}}; width: 13px;height: 13px"></div>-->
+            </div>
+          </div>
+          {{/each}}
+        </div>
+        </div>
+      </div>

@@ -1,0 +1,55 @@
+<div class="container">
+  <div class="row">
+    <form role="form" id="admin-create-course" class="col-md-9 go-right">
+      <h2>Crate Course</h2>
+      <div class="form-group">
+        <input id="name" name="name" type="text" class="form-control" required>
+        <label for="name">Course name</label>
+
+      </div>
+      <div class="row">
+        <div class="form-group col-md-12">
+          <input id="start-date" name="startDate" type="date" class="form-control" required>
+          <label for="start-date">Course Start Date</label>
+        </div>
+        <div class="form-group col-md-12">
+          <input id="end-date" name="endDate" type="date" class="form-control" required>
+          <label for="end-date">Course End Date</label>
+        </div>
+        <div class="row">
+          <div class="form-group">
+            <label for="track-selection">Select track:</label>
+            <select name="track" class="form-control" id="track-selection">
+              <option>Web Frond-End Development</option>
+              <option>QA Engineer</option>
+              <option>Mobile</option>
+              <option>ASP.NET</option>
+              <option>School Academy</option>
+            </select>
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group">
+            <label for="module-selection">Select module:</label>
+            <select name="module" class="form-control" id="module-selection">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-group">
+          <label for="description">Description:</label>
+          <textarea name="description" id="description" cols="30" rows="3"></textarea>
+        </div>
+      </div>
+
+      <input type="file" name="image">
+      <label for="image">Image</label>
+
+      <button class="btn btn-success" id="course-create-btn">Create Course</button>
+    </form>
+  </div>
+</div>

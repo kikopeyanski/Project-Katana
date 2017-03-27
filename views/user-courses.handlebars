@@ -1,0 +1,47 @@
+<div class="content-courses-wrapper">
+  <div class="content-courses">
+    {{#each this.result}}
+      <div class="course">
+        <div class="course-image">
+          <img src="https://floating-inlet-77532.herokuapp.com/{{image}}" alt="">
+        </div>
+        <div class="course-info">
+          <a href="#/course/{{_id}}">{{name}}<br/></a>
+          <span>{{track}}</span>
+          <div class="course-color-circle" style="background-color: {{color}}; width: 13px;height: 13px">
+          </div>
+        </div>
+        <div class="course-homework">
+          <div class="course-homework-icon">
+            <img src="images/hw.png" alt="">
+            <div class="course-homework-count">
+              <span href="">
+                {{homeworkCount}}
+              </span>
+            </div>
+          </div>
+          <p>{{soonestHomework}}</p>
+        </div>
+      </div>
+    {{/each}}
+  </div>
+  <div class="content-calendar">
+    <div class="calendar">
+      <div id="chartdiv"></div>
+    </div>
+  </div>
+  <div class="latest-notifications">
+    <h4>Latest Notifications</h4>
+    <hr>
+    <div class="all-notifications">
+      {{#each this.user.notifications}}
+        <div id="{{_id}}" class="notification">
+          <img src="images/dcmt.png" alt="">
+          <p>Lecture <span class="lecture-name">{{lectureName}}</span> was added to course <a
+            href="#/course/{{courseId}}" class="course-name">{{course}}</a>
+            <br><span class="notification-date">{{formatRelative  date}}</span></p>
+        </div>
+      {{/each}}
+    </div>
+  </div>
+</div>

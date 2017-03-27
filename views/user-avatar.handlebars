@@ -1,0 +1,27 @@
+<div class="user-settings-wrapper">
+  <div class="change-settings-navbar">
+    <a class="nav-link password-link " href="#/user-settings">Change Password <span class="sr-only">(current)</span></a>
+    <a class="nav-link avatar-link active" href="#/user-settings/avatar">Change Avatar</a>
+  </div>
+  <div class="avatar-settings">
+    <form role="form" id="user-avatar-form" enctype="multipart/form-data">
+      <div class="form-group image-input">
+        <input type="file" name="image" id="input-image">
+      </div>
+      <div class="register-user-image">
+        <img id="user-image" src="http://localhost:1337/image/{{this.image}}" alt="">
+      </div>
+      <div class="form-group password-input">
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" tabindex="2" class="form-control"
+               placeholder="">
+      </div>
+      <div class="form-group button-send">
+        <button class="btn btn-danger main-action-button" id="user-change-avatar-button">Change Avatar</button>
+      </div>
+    </form>
+  </div>
+  <div class="user-change-avatar">
+
+  </div>
+</div>

@@ -1,0 +1,79 @@
+{{#if this}}
+  <div class="navbar-logo-wrapper p-0 logged-in">
+{{else}}
+  <div class="navbar-logo-wrapper p-0 not-logged-in">
+{{/if}}
+  <img class="navbar-logo" src="images/Katana-Logo.png">
+</div>
+
+{{#if this}}
+    <div class="navbar-search-wrapper">
+      <div class="navbar-search">
+        <img class="icon" id="bell-icon" content="notification-icon" src="images/bell.png">
+        {{#if this.notifications}}
+          <div class="notification-count"><span>{{this.notificationCount}}</span></div>
+          <div class="notification-panel">
+            {{#each this.notifications}}
+              <div id="{{_id}}" class="notification">
+                <p>Lecture <span class="lecture-name">{{lectureName}}</span> was added to course <a
+                  href="{{courseId}}" class="course-name">{{course}}</a></p>
+              </div>
+              <hr>
+            {{/each}}
+          </div>
+        {{else}}
+          <div class="notification-panel">
+            <div class="notification">No notifications</div>
+          </div>
+        {{/if}}
+        <img class="icon" id="zoom-icon" src="images/zoom.png">
+        <input type="text" id="search-value">
+      </div>
+    </div>
+{{/if}}
+{{#if this}}
+    <div class="navbar-user-settings">
+
+      <button class="user-settings-btn">
+        <a href="#/user-settings">
+          <img src="images/settings.png" alt="">
+
+          Settings
+
+        </a>
+      </button>
+    </div>
+{{/if}}
+  <div class="navbar-user-panel">
+    <div class="dropdown-menu">
+      {{#if this}}
+        <a class="dropdown-item" href="#/user-settings">Settings</a>
+        {{#if this.isAdmin}}
+          <a class="dropdown-item" href="#/admin/courses/create">Create Course[ADMIN]</a>
+        {{/if}}
+        <a class="dropdown-item" href="#/logout">Logout</a>
+
+      {{else}}
+        <a class="dropdown-item" href="#/register">Register</a>
+        <a class="dropdown-item" href="#/login">Login</a>
+
+      {{/if}}
+    </div>
+
+    {{#if this}}
+      <button type="button" class="btn dropdown-toggle dropdown-toggle-split" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+        <span class="user-username">
+          <img src="https://floating-inlet-77532.herokuapp.com/image/{{this.image}}" alt="">
+          {{this.username}}
+        </span>
+      </button>
+
+    {{else}}
+      <button type="button" class="btn  float-right dropdown-toggle dropdown-toggle-split" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+        <span>Hello Guest!</span>
+      </button>
+    {{/if}}
+  </div>
+

@@ -1,0 +1,106 @@
+<div class="course-info-wrapper">
+  <div class="left-side">
+    <div class="course-info-component course-info">
+      <h1>{{result.course.name}}</h1>
+      <div class="course-info-details">
+        <div class="course-info-dates">
+          <!--TODO: change icon color to white-->
+          <div class="course-info-dates-icon">
+            <img class="icon" src="images/calendar.png" alt="">
+          </div>
+          <span class="course-info-dates-values">
+        <span class="course-info-start-date">
+          Starts On:
+          {{ formatDate  result.course.startDate day="numeric" month="long" year="numeric"}}
+        </span>
+        <br>
+        <span class="course-info-end-date">
+          Ends On:
+          {{ formatDate result.course.endDate day="numeric" month="long" year="numeric"}}
+        </span>
+      </span>
+        </div>
+        <img class="separator" src="images/separator.png" alt="">
+
+        <div class="course-students">
+          <div class="course-students-icon">
+            <img class="icon" src="images/students.png" alt="">
+          </div>
+          <span class="course-students-info">
+          <span class="students-signed">
+            Signed: {{result.course.studentsSigned}}
+          </span>
+          <br>
+          <span class="students-limit">
+            Limit: {{result.course.studentsLimit}}
+          </span>
+        </span>
+        </div>
+
+        {{#if result.isSigned}}
+          <button class="course-button remove-course">Unsign for this course</button>
+          <button class="course-button add-course hide">Sign in for this course</button>
+        {{else}}
+          <button class="course-button remove-course hide">Unsign for this course</button>
+          <button class="course-button add-course ">Sign in for this course</button>
+        {{/if}}
+      </div>
+      <hr>
+      <div class="course-description">
+        <p>{{result.course.description}}</p>
+      </div>
+    </div>
+    <div class="course-info-component course-calendar" id="course-calendar">
+    </div>
+  </div>
+  <div class="course-info-component course-chat">
+    <div class="comments-all">
+      {{#if result.course.comments}}
+        {{#each result.course.comments}}
+          <div class="comment">
+            <img src="http://localhost:1337/image/{{this.user.avatar}}" alt="">
+            <div class="comment-info">
+              <span>{{this.user.name }}</span>
+              <br/>
+              <span>{{formatRelative this.date style="numeric" }}</span>
+            </div>
+            <p>{{this.content}}</p>
+          </div>
+        {{/each}}
+      {{else}}
+        <h4>Be the first to comment...!</h4>
+      {{/if}}
+    </div>
+    <form id="form-new-comment" action="">
+      <textarea name="commentText" id="commentText" cols="30"
+                rows="4"></textarea>
+      <button id="comment-post-comment" class="btn btn-success">Comment</button>
+    </form>
+  </div>
+
+  <!--Admin Panel-->
+
+</div>
+{{#if user.isAdmin}}
+  <div class="admin-course-add-lecture row">
+    <label>Lecture Name
+      <input type="text" class="lecture-name"/>
+    </label>
+    <label>Lecture Date
+      <input type="date" class="lecture-date">
+    </label>
+    <label>Lecture start hour
+      <input type="time" class="lecture-startHour"/>
+    </label>
+    <label>Lecture end hour
+      <input type="time" class="lecture-endHour"/>
+    </label>
+    <input type="button" class="lecture-create-lecture-btn" value="Create Lecture">
+    <label>Homework
+      <input name="hw" type="checkbox" class="lecture-homework">
+    </label>
+    <label class="homework" style="display: none;">
+      <input type="date" class="lecture-homework-deadline">
+    </label>
+  </div>
+{{/if}}
